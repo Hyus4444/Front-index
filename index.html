@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consulta y Reporte</title>        
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />    
+  </head>
+ 
+  <body class="bg-opacity-10 bg-light">
+    <header class="violeta text-white py-3">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h1 class="h3 mb-0">Consulta y Reporte SQL</h1>
+          </div>
+          <div class="col-md-6 text-end">
+            <button class="btn btn-light" type="button" id="toggleDarkMode">
+              Modo Oscuro
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid mt-4">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Haz tu consulta SQL"
+              aria-label="Consulta SQL"
+              aria-describedby="button-addon1"
+            />
+            <button class="btn btn-primary" type="button" id="button-addon1">
+              Consultar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="grid text-center">
+        <div class="g-col-4">
+          <div class="mt-3">
+            <label for="tablaDiv" class="form-label"
+              >Resultado de la consulta:</label
+            >
+            <h2>Informe de Ventas</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Categoría</th>
+                  <th>Fecha de Venta</th>
+                  <th>Cantidad Vendida</th>
+                  <th>Precio Unitario</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Producto A</td>
+                  <td>Electrónicos</td>
+                  <td>2023-01-15</td>
+                  <td>20</td>
+                  <td>$500.00</td>
+                  <td>$10,000.00</td>
+                </tr>
+                <tr>
+                  <td>Producto B</td>
+                  <td>Ropa</td>
+                  <td>2023-01-18</td>
+                  <td>15</td>
+                  <td>$35.00</td>
+                  <td>$525.00</td>
+                </tr>
+                <tr>
+                  <td>Producto C</td>
+                  <td>Hogar</td>
+                  <td>2023-01-22</td>
+                  <td>30</td>
+                  <td>$75.00</td>
+                  <td>$2,250.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row g-2">
+          <div class="col-6">
+            <div class="p-3">
+              <div class="g-col-2">
+                <div class="g-col-3 g-start-2">
+                  <div class="g-col-4">
+                    <div class="col-md-6">
+                      <div class="mt-3">
+                        <label for="graficaDiv" class="form-label"
+                          >Gráfica generada:</label
+                        >
+                        <div class="d-flex justify-content-center">
+                          <img
+                            src="https://support.content.office.net/es-es/media/96611fdd-17b7-4cc0-851d-d06b13d1667d.png"
+                            alt="Gráfica"
+                            class="img-fluid"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="p-3">
+              <div class="container-fluid">
+                <div class="g-col-2">
+                  <div class="col-md-6">
+                    <label for="tablaDiv" class="form-label"
+                      >Consulta SQL:</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            $("#toggleDarkMode").click(function () {
+                $("body").toggleClass("dark-mode");
+                $("body").toggleClass("bg-light");
+            });
+        });
+    </script>
+</body>
+</html>
